@@ -90,15 +90,92 @@ s=''.join([x for x in string.ascii_lowercase if x not in s])
 print(f"Missing alphabets : {s}")
 '''
 
+'''
 #Reverse words in a string:
 s=' '.join(input("Enter String: ").split()[::-1])
 print(f"Reversed string : {s}")
+'''
+
+'''
+#find substring:
+s1=input("Enter the String: ")
+s2=input("Enter the search String: ")
+print(s1.find(s2))
+print("Present" if s1.find(s2)>-1 else "Not Present")
+'''
+
+'''
+#isomorphic strings:
+s1=input("Enter string 1: ")
+s2=input("Enter string 2: ")
+m1,m2={},{}
+flag=True
+for c1,c2 in zip(s1,s2):
+    if c1 in m1 and m1[c1]!=c2:
+        flag=False
+        break
+    if c2 in m2 and m2[c2]!=c1:
+        flag=False
+        break
+    m1[c1]=c2
+    m2[c2]=c1
+print("Isomorphic Strings" if flag else "Not Isomorphic Strings")
+'''
+
+'''
+#Longest non repeating substring:
+s=input("Enter the String: ")
+map1={}
+start=0
+maxv=0
+ans=""
+for i,ch in enumerate(s):
+    if ch in map1 and map1[ch]>=start:
+        start=map1[ch]+1
+    map1[ch]=i
+    curr_length=i-start+1
+    if curr_length>=maxv:
+        maxv=curr_length
+        ans=s[start:i+1]   
+print(f"Max size is {maxv} and sub-string is {ans}")
+'''
+
+#Longest prefix of given string:
+s=input("Enter the string: ").split()
+pre=s[0]
+for i in s[1:]:
+    while not i.startswith(pre):
+        pre=pre[:-1]
+print(f"Longest common prefix : '{pre}'")
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
