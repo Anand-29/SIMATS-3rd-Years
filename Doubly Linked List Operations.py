@@ -45,6 +45,12 @@ class DLL:
                 nn.next.prev=newnode
                 t.next=newnode
     def delete_front(self):
+        if self.head is None:
+            print("Empty List")
+            return
+        if self.head.next==None:
+            self.head=None
+            return
         self.head=self.head.next
         self.head.prev=None
     def delete_end(self):
@@ -112,4 +118,4 @@ while True:
         ob.display_backward()
     else:
         break
-
+#github.com/Anand-29/SIMATS-3rd-Years
