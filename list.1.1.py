@@ -82,6 +82,162 @@ while i<j:
         i+=1
         j-=1
 '''
+'''
+#largest subarray sum in an continous array/list:
+#Kadane's Algorithm
+li=list(map(int,input("Enter the data: ").split()))
+csum=lsum=li[0]
+for i in range(1,len(li)):
+    csum=max(csum+li[i],li[i])
+    lsum=max(lsum,csum)
+print(f"Largest subarray sum : {lsum}")
+
+9020
+9041
+9060
+'''
+
+'''
+#Remove duplicate in an Sorted list:
+li=list(map(int,input("Enter the data: ").split()))
+ans=[]
+for i in li:
+    if i not in ans:
+        ans.append(i)
+print(ans)
+'''
+
+'''
+#Find second Largest in a List:
+li=list(map(int,input("Enter the data: ").split()))
+l,sl=li[0],-1
+for i in range(1,len(li)):
+    if li[i]>l:
+        sl=l
+        l=li[i]
+    if li[i]<l and li[i]>sl:
+        sl=li[i]
+print(f"Second Largest : {sl}")
+
+print(sorted(li)[-2])
+'''
+
+'''
+#Squares of even numbers btw 1-20 using comprehension:
+x=[i**2 for i in range(1,20+1) if i%2==0]
+print(x)
+'''
+
+'''
+#list of prime nos using list comprehension:
+def is_prime(x):
+    if x<=2:
+        return True
+    for i in range(2,x):
+        if x%i==0:
+            return False
+    return True
+x=[i for i in range(1,100+1) if is_prime(i)]
+#y=[i for i in range(1,100+1) if all(i%j!=0 for j in range(2,i))]
+print(x)
+'''
+'''
+#Flatten 2D into 1D list:
+#method 1
+li=[[10,20],
+    [30,40]]
+ans=[]
+for i in range(2):
+    for j in range(2):
+        ans.append(li[i][j])
+print(ans)
+#method 2
+x=[li[i][j] for i in range(len(li)) for j in range(len(li))]
+print(x)
+print(li)
+'''
+'''
+#index & value using enumerate():
+li=[10,20,30,40]
+for i,j in enumerate(li):
+    print(f"ind: {i}, val : {j}")
+'''
+
+'''
+#String sort based on length:
+li=["banana","avacado",]
+print(f"Alphabetical : {sorted(li)}")
+print(f"Based on length: {sorted(li,key=len)}")
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
